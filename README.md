@@ -1,6 +1,11 @@
 # MedPMC
 
-MedPMC is a framework for curating large-scale medical image-text data from biomedical literature. The pipeline combines PubMed Central article metadata and JATS XML with figure screening, multi-panel processing, subcaption alignment, and medical-image classification. The June 2024 release produced the MedPMC-11M dataset and MedPMC-CLIP model.
+**MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data for Foundation Models**
+
+MedPMC is an automated and continuously updatable framework that transforms permissively licensed biomedical literature from PubMed Central into high-fidelity medical image-text data for multimodal foundation model development in medicine.
+
+The project releases the curated MedPMC corpus, data curation framework, component-level benchmark resources, pretrained checkpoints, source-license metadata, and code to support reproducible, scalable, and shareable infrastructure for medical multimodal AI.
+
 
 - **Paper:** [MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data for Foundation Models](https://arxiv.org/abs/2607.07673)
 - **Dataset:** [MedPMC-11M](https://huggingface.co/datasets/Yale-BIDS-Chen/medpmc-11m-dataset_jun24_baseline)
