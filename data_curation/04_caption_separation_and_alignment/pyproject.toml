@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medpmc-caption-separation-and-alignment"
+version = "0.4.0"
+description = "Caption Separation and Alignment stage of the MedPMC data curation pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Yale-BIDS-Chen-Lab"}]
+dependencies = [
+  "Pillow>=10.3",
+  "pyarrow>=15.0",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+lmdeploy = [
+  "lmdeploy>=0.14,<0.15",
+]
+internvl = [
+  "lmdeploy>=0.14,<0.15",
+  "timm>=1.0,<2",
+]
+inference = [
+  "lmdeploy>=0.14,<0.15",
+  "timm>=1.0,<2",
+]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+medpmc-caption-separation-and-alignment = "medpmc_caption_separation_and_alignment.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

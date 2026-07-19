@@ -1,0 +1,44 @@
+# Local validation and scratch data
+local_validation_runs/
+
+# Pipeline outputs
+**/outputs/
+**/results/
+**/manifests/
+
+# Data and models
+**/data/
+**/images/
+**/checkpoints/
+*.pth
+*.pt
+*.pth.tar
+*.safetensors
+
+# Hugging Face and model caches
+.cache/
+**/.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+
+# Environments and IDEs
+.env
+.venv/
+.vscode/
+.idea/
+
+# Logs and crashes
+*.log
+core
+core.*
+*.out
+
+# OS and job artifacts
+.DS_Store
+slurm-*.out

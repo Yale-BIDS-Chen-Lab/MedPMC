@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medpmc-multi-panel-figure-separation"
+version = "0.3.0"
+description = "Multi-panel Figure Separation stage of the MedPMC data curation pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Yale-BIDS-Chen-Lab"}]
+dependencies = [
+  "Pillow>=10.3",
+  "pyarrow>=15.0",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+inference = [
+  "huggingface-hub>=0.23",
+  "opencv-python-headless>=4.9",
+]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+medpmc-multi-panel-figure-separation = "medpmc_multi_panel_figure_separation.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

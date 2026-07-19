@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "medpmc-medical-figure-classification"
+version = "0.1.0"
+description = "Medical Figure Classification stage of the MedPMC data curation pipeline"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [{name = "Yale-BIDS-Chen-Lab"}]
+dependencies = [
+  "Pillow>=10.3",
+  "pyarrow>=15.0",
+  "tqdm>=4.66"
+]
+
+[project.optional-dependencies]
+inference = [
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "timm>=1.0",
+  "huggingface-hub>=0.23"
+]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+medpmc-medical-figure-classification = "medpmc_medical_figure_classification.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
