@@ -7,6 +7,18 @@ MedPMC is a framework for curating large-scale medical image-text data from biom
 - **Model:** [MedPMC-CLIP](https://huggingface.co/Yale-BIDS-Chen/medpmc-clip-l-14_jun24_v1)
 - **Resource collection:** [MedPMC on Hugging Face](https://huggingface.co/collections/Yale-BIDS-Chen/medpmc)
 
+## Quick Start 
+
+This repository contains the released MedPMC curation code and documentation corresponding to the manuscript:
+
+1. See [`data_curation/`](data_curation/) for the five-stage curation pipeline and stage-specific examples.
+2. See [`training/`](training/) for model training documentation, including MedPMC-CLIP and pipeline components.
+3. See [`evaluation/`](evaluation/) for curation-stage and downstream evaluation resources.
+4. See [`docs/licensing.md`](docs/licensing.md) for dataset, model, and source-article licensing notes.
+5. See the [Hugging Face collection](https://huggingface.co/collections/Yale-BIDS-Chen/medpmc) for released datasets, model checkpoints, and metadata.
+
+Please note that the evaluations involving Yale New Haven Health System clinical data cannot be redistributed because they contain patient-derived clinical data and are subject to privacy, governance, and IRB restrictions. Aggregate results and reproducible procedures are described in the manuscript.
+
 ## Data curation pipeline
 
 The curation code is organized into five stages. Each stage has its own installable package, command-line interface, tests, and README.
@@ -35,8 +47,13 @@ MedPMC/
 
 The executable packages under `data_curation/` reproduce curation-time processing and model inference. Training configurations for both MedPMC-CLIP and the models used within the curation pipeline are organized under `training/`. Evaluation resources are separated into curation-pipeline evaluation and downstream MedPMC-CLIP evaluation under `evaluation/`.
 
-## Citation
+## Disclaimer
+MedPMC is an independent research resource derived from permissively licensed PubMed Central articles. It is not affiliated with, endorsed by, or sponsored by PubMed Central, the National Library of Medicine, or the National Institutes of Health. In addition, the information produced on this website is not intended for direct diagnostic use or medical decision-making without review and oversight by a clinical professional. Individuals should not change their health behavior solely on the basis of information produced on this website
 
+---
+
+## Citation
+If you use MedPMC, please cite:
 ```bibtex
 @article{kim2026medpmc,
   title={MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data for Foundation Models},
